@@ -1,3 +1,5 @@
+import java.security.PublicKey;
+
 public class StackArray{
     private Object[] stackarray;
     private int size;
@@ -27,6 +29,35 @@ public class StackArray{
             top--;
             System.out.println("popped object is : "+temp);
         }
+    }
+
+    public Object peek() {
+        return stackarray[top];
+    }
+
+    public void display() {
+        for(int i=0; i<=top; i++) {
+            System.out.print(stackarray[i]+" ");
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+     
+        StackArray st = new StackArray(6);
+        st.push(89);
+        st.push(10);
+        st.push(50);
+        st.push(89);
+        st.display();
+        st.push(89);
+        st.push(10);
+        st.display();
+        st.pop();
+        st.pop();
+        st.pop();
+        st.display();
+
     }
 
 }
